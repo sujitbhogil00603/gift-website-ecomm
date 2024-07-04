@@ -1,0 +1,19 @@
+{
+  "name": "gift-hamper-website",
+  "version": "1.0.0",
+  "description": "A simple website for a custom gift hamper business",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.4.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

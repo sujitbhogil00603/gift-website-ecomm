@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Gift Hampers</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header id="main-header">
+        <h1>Custom Gift Hampers</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/contact">Contact Us</a>
+            <a href="/cart">Cart</a>
+            <a href="/chocolates">Chocolates</a>
+            <a href="/necklaces">Necklaces</a>
+            <a href="/bracelets">Bracelets</a>
+            <a href="/messages">Messages</a>
+            <a href="/gift-boxes">Gift Boxes</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Featured Products</h2>
+        <section id="featured-products">
+            <!-- Chocolates -->
+            <div class="category">
+                <h3>Chocolates</h3>
+                <% if (chocolates.length > 0) { %>
+                    <% chocolates.forEach(chocolate => { %>
+                        <div class="product">
+                            <h4><%= chocolate.name %></h4>
+                            <p>Price: $<%= chocolate.price %></p>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="id" value="<%= chocolate.id %>">
+                                <input type="hidden" name="name" value="<%= chocolate.name %>">
+                                <input type="hidden" name="price" value="<%= chocolate.price %>">
+                                <button type="submit">Add to Hamper</button>
+                            </form>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <p>No chocolates available</p>
+                <% } %>
+            </div>
+
+            <!-- Necklaces -->
+            <div class="category">
+                <h3>Necklaces</h3>
+                <% if (necklaces.length > 0) { %>
+                    <% necklaces.forEach(necklace => { %>
+                        <div class="product">
+                            <h4><%= necklace.name %></h4>
+                            <p>Price: $<%= necklace.price %></p>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="id" value="<%= necklace.id %>">
+                                <input type="hidden" name="name" value="<%= necklace.name %>">
+                                <input type="hidden" name="price" value="<%= necklace.price %>">
+                                <button type="submit">Add to Hamper</button>
+                            </form>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <p>No necklaces available</p>
+                <% } %>
+            </div>
+
+            <!-- Bracelets -->
+            <div class="category">
+                <h3>Bracelets</h3>
+                <% if (bracelets.length > 0) { %>
+                    <% bracelets.forEach(bracelet => { %>
+                        <div class="product">
+                            <h4><%= bracelet.name %></h4>
+                            <p>Price: $<%= bracelet.price %></p>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="id" value="<%= bracelet.id %>">
+                                <input type="hidden" name="name" value="<%= bracelet.name %>">
+                                <input type="hidden" name="price" value="<%= bracelet.price %>">
+                                <button type="submit">Add to Hamper</button>
+                            </form>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <p>No bracelets available</p>
+                <% } %>
+            </div>
+
+            <!-- Messages -->
+            <div class="category">
+                <h3>Messages</h3>
+                <form action="/add-to-cart" method="post">
+                    <label for="message">Enter your message:</label>
+                    <textarea id="message" name="name" required></textarea>
+                    <input type="hidden" name="id" value="0"> <!-- Assuming messages are not individually listed with IDs -->
+                    <input type="hidden" name="price" value="0"> <!-- Messages are added free of cost -->
+                    <button type="submit">Add Message to Hamper</button>
+                </form>
+            </div>
+            <section id="flash-messages">
+                <% if (typeof success !== 'undefined' && success.length > 0) { %>
+                    <div class="flash success">
+                        <%= success %>
+                    </div>
+                <% } else if (typeof error !== 'undefined' && error.length > 0) { %>
+                    <div class="flash error">
+                        <%= error %>
+                    </div>
+                <% } %>
+            </section>
+            <!-- Gift Boxes -->
+            <div class="category">
+                <h3>Gift Boxes</h3>
+                <% if (giftBoxes.length > 0) { %>
+                    <% giftBoxes.forEach(giftBox => { %>
+                        <div class="product">
+                            <h4><%= giftBox.name %></h4>
+                            <p>Price: $<%= giftBox.price %></p>
+                            <form action="/add-to-cart" method="post">
+                                <input type="hidden" name="id" value="<%= giftBox.id %>">
+                                <input type="hidden" name="name" value="<%= giftBox.name %>">
+                                <input type="hidden" name="price" value="<%= giftBox.price %>">
+                                <button type="submit">Add to Hamper</button>
+                            </form>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <p>No gift boxes available</p>
+                <% } %>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

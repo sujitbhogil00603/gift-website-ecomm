@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Necklaces</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Custom Gift Hampers</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/contact">Contact Us</a>
+            <a href="/cart">Cart</a>
+            <a href="/chocolates">Chocolates</a>
+            <a href="/necklaces">Necklaces</a>
+            <a href="/bracelets">Bracelets</a>
+            <a href="/messages">Messages</a>
+            <a href="/gift-boxes">Gift Boxes</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Necklaces</h2>
+        <div id="product-catalog">
+            <div class="product">
+                <h3>Gold Necklace</h3>
+                <p>Price: $50</p>
+                <form action="/add-to-cart" method="post">
+                    <input type="hidden" name="id" value="3">
+                    <input type="hidden" name="name" value="Gold Necklace">
+                    <input type="hidden" name="price" value="50">
+                    <button type="submit">Add to Hamper</button>
+                </form>
+            </div>
+            <div class="product">
+                <h3>Silver Necklace</h3>
+                <p>Price: $30</p>
+                <form action="/add-to-cart" method="post">
+                    <input type="hidden" name="id" value="4">
+                    <input type="hidden" name="name" value="Silver Necklace">
+                    <input type="hidden" name="price" value="30">
+                    <button type="submit">Add to Hamper</button>
+                </form>
+            </div>
+            <!-- Add more necklace products as needed -->
+        </div>
+    </main>
+</body>
+</html>
